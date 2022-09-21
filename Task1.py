@@ -17,8 +17,5 @@ print(odd_numbers())
 
 # Новое решение
 list = [1, 3, 6, 1, 46, 5, 32, 7]
-new_list = [list[index] for index in range(len(list)) if index % 2 != 0]
-sum = 0
-for i in new_list:
-    sum += i
-print(sum)
+summa = sum(list[index] for index in range(len(list)) if index % 2 != 0)
+print(summa)
