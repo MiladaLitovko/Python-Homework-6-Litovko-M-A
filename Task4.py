@@ -25,9 +25,6 @@ str1 = str(input('Введите строку 1: '))
 str2 = str(input('Введите строку 2: '))
 count = 0
 
-out = str(filter(lambda it: it in str2, str1))
+out = sum(count + 1 for i in range(0,len(str1)) if str1[i] == str2[0] and str2 == str1[i: i + len(str2)])
 
-result = sum(out[index] for index in range(len(out)) if out[index] == str2[index] and out[index + 1] == str2[index + 1])
-
-
-print(result)
+print(out)
