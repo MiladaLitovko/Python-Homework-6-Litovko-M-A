@@ -25,9 +25,8 @@ print(difference())
 # Новое решение
 import math
 
-list = [1.1, 1.2, 3.1, 5, 10.01]
-
-new_list = [list[i] % 1 for i in range(len(list))]
+org_list = [1.1, 1.2, 3.1, 5, 10.01]
+new_list = list(map(lambda x: x % 1, org_list))
 dif = str(max(new_list) - min(new_list))
 
 print(dif[0:4])
