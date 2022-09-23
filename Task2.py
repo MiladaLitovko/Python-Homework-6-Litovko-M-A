@@ -1,58 +1,27 @@
 '''
-Напишите программу, которая найдёт произведение пар чисел списка. 
-Парой считаем первый и последний элемент, второй и предпоследний и т.д.
-Пример:
-- [2, 3, 4, 5, 6] => [12, 15, 16];
-- [2, 3, 5, 6] => [12, 15]
+Задание 4 Задайте список из N элементов, заполненных числами из промежутка [-N, N].
+Найдите произведение элементов на позициях a и b.
+Значения N, a и b вводит пользователь с клавиатуры.
 '''
 # Оригинальное решение
 
-def pairs():
-    list = [2, 3, 4, 5, 6]
-    newlist = []
-    b = -1
-    if len(list) % 2 == 0:
-        for i in range(len(list) // 2):
-            a = list[i] * list[b]
-            b -= 1
-            newlist.append(a)
-    else:
-        for i in range((len(list) - 1) // 2 + 1):
-            if i != ((len(list) - 1) // 2):
-                a = list[i] * list[b]
-                b -= 1
-                newlist.append(a)
-            else:
-                a = list[i] * list[i]
-                newlist.append(a)
-    return(newlist)
+n = int(input('Введите кол-во элементов: '))
+a = int(input('Введите позицию элемента a: '))
+b = int(input('Введите позицию элемента b: '))
+list = []
 
-print(pairs())
-
-
-
+for i in range(-n, n+1):
+    list.append(i)
+result = list[a] * list[b]
+print(f'Вывод элементов в списке {list}')
+print(f'Произведение элементов на позициях {a} и {b} равно {result}')
 
 # Новое решение
-def pairs():
-    list = [2, 3, 4, 5, 6]
-    newlist = []
-    b = -1
-    
-    if len(list) % 2 == 0:
-            newlist = [a for i in range(len(list) // 2)  ]
-        for i in range(len(list) // 2):
-            a = list[i] * list[b]
-            b -= 1
-            newlist.append(a)
-    else:
-        for i in range((len(list) - 1) // 2 + 1):
-            if i != ((len(list) - 1) // 2):
-                a = list[i] * list[b]
-                b -= 1
-                newlist.append(a)
-            else:
-                a = list[i] * list[i]
-                newlist.append(a)
-    return(newlist)
 
-print(pairs())
+n = int(input('Введите кол-во элементов: '))
+a = int(input('Введите позицию элемента a: '))
+b = int(input('Введите позицию элемента b: '))
+
+new_list = [i for i in range(-n, n+1)]
+print(f'Вывод элементов в списке {new_list}')
+print(f'Произведение элементов на позициях {a} и {b} равно {list[a] * list[b]}')
